@@ -6,3 +6,6 @@ public class FullTimeMentor implements Mentor {
         System.out.println("Full Time Mentor Account is breing created...");
     }
 }
+
+// if project show orange or red:
+// right click on the pom.xml file -> add as maven project
