@@ -18,12 +18,10 @@ public class MentorController {
         mentorList.add(new Mentor("Mike", "Smith", 45, Gender.MALE));
         mentorList.add(new Mentor("Tom", "Hanks", 65, Gender.MALE));
         mentorList.add(new Mentor("Amy", "Brian", 25, Gender.FEMALE));
-
-        Mentor mentor=new Mentor("Flinta", "Ozzy", 35, Gender.MALE);
+        mentorList.add(new Mentor("Flinta", "Ozzy", 35, Gender.MALE));
 
         model.addAttribute("mentors", mentorList);
-        model.addAttribute("mentor", mentor);
 
-        return "mentor-list";
+        return "/mentor/mentor-list";
     }
 }
