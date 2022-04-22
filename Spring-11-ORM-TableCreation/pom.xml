@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Spring-10-ORM-TableCreation</artifactId>
+    <artifactId>Spring-11-ORM-TableCreation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-10-ORM-TableCreation</name>
-    <description>Spring-10-ORM-TableCreation</description>
+    <name>Spring-11-ORM-TableCreation</name>
+    <description>Spring-11-ORM-TableCreation</description>
     <properties>
         <java.version>11</java.version>
     </properties>
