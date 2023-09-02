@@ -5,4 +5,11 @@ public class Hello {
     // comment added
     //another comment
     //one more comment
+
+    /**
+     *
+     * @project ${PROJECT_NAME}
+     * @author ${USER} on ${DATE}
+     */
+
 }
