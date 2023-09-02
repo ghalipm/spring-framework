@@ -1,0 +1,7 @@
+For fine grained tokens:
+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
+
+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
+
+for classic token for Cydeo JD5:
+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
