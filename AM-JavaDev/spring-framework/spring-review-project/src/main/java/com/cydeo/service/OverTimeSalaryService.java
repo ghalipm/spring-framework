@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author ghalipm on 9/9/2023
- * @project spring-framework
+ * @project spring-review-project
  */
 @Component
 public class OverTimeSalaryService {
@@ -15,7 +15,8 @@ public class OverTimeSalaryService {
     EmployeeRepository employeeRepository;
     HoursRepository hoursRepository;
 
-    public OverTimeSalaryService(EmployeeRepository employeeRepository, @Qualifier("OTH") HoursRepository hoursRepository) {
+    public OverTimeSalaryService(EmployeeRepository employeeRepository,@Qualifier("OTH") HoursRepository hoursRepository) {
+    //public OverTimeSalaryService(EmployeeRepository employeeRepository, HoursRepository hoursRepository) {
         this.employeeRepository = employeeRepository;
         this.hoursRepository = hoursRepository;
     }

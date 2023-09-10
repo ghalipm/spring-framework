@@ -6,13 +6,14 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author ghalipm on 9/9/2023
- * @project spring-framework
+ * @project spring-review-project
  */
 
 
 @Component
-@Primary
-@Qualifier("RH")
+@Primary // in the case of more than one bean, either one bean must be @Primary
+// or need to use @Qualifier annotation to each bean.
+@Qualifier("RH")  //better to have qualifiers even if you do not use them.
 public class RegularHours implements HoursRepository{
     @Override
     public int getHours() {

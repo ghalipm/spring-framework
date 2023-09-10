@@ -2,14 +2,13 @@ package com.cydeo;
 
 import com.cydeo.config.EmployeeConfig;
 import com.cydeo.service.OverTimeSalaryService;
-import com.cydeo.service.OverTimeSalaryService;
 import com.cydeo.service.SalaryService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author ghalipm on 9/9/2023
- * @project spring-framework
+ * @project spring-review-project
  */
 public class CydeoApp {
 
