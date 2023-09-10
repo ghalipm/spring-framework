@@ -1,14 +1,12 @@
 package stereotype_annotations.Model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NonNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author ZipZap on 9/2/2023
- * @project spring-framework
+ * @author ghalipm on 9/2/2023
+ * @project spring-review-IoC
  */
 @Component
 @AllArgsConstructor

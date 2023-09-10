@@ -3,8 +3,8 @@ package stereotype_annotations.Model;
 import org.springframework.stereotype.Component;
 
 /**
- * @author ZipZap on 9/2/2023
- * @project spring-framework
+ * @author ghalipm on 9/2/2023
+ * @project spring-review-IoC
  */
 @Component
 public class DevOps {

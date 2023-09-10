@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * @author ghalipm on 9/9/2023
- * @project spring-review-project
+ * @project spring-review-IoC
  */
 
 @AllArgsConstructor
