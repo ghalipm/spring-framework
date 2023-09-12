@@ -16,3 +16,13 @@ import org.springframework.context.annotation.Configuration;
 public class CourseConfigOP {
 
 }
+
+/**
+ * Spring-IoC-Bean stereotype annotations:  @Component, @Configuration,
+ * @ComponentScan for classes in the same package ;
+ * For classes, some in the same package and some in other package:
+ * @ComponentScan(basePackages = "com.cydeo")
+ *    1. basePackage should not be nested: basePackage can have direct child packages,
+ *    but not grand children packages.
+ *    2. Same class names in other packages causes problems
+ */
