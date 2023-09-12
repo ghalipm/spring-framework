@@ -20,7 +20,7 @@ public class CydeoApp {
         System.out.println("===============Creating Mentors with Beans and Multiple ConfigApp classes========");
 
         // multiple ConfigApp classes can be added to ApplicationContext container
-        ApplicationContext container=new AnnotationConfigApplicationContext(ConfigApp.class, AnotherConfigApp.class);
+        ApplicationContext container=new AnnotationConfigApplicationContext(ConfigAppMB.class, AnotherConfigApp.class);
 
         FullTimeMentor ftm = container.getBean(FullTimeMentor.class);
         ftm.createAccount();

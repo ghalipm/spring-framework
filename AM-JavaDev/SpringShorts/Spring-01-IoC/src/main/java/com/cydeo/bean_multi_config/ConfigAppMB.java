@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-public class ConfigApp {
+public class ConfigAppMB {
 
     // create method and label with @Bean
     @Bean
