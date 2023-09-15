@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class DevOps {
     public void getTotalHours(){
-        System.out.println("Total hours: "+ 15);
+        System.out.println("DevOps Total hours: "+ 15);
     }
 }

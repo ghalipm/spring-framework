@@ -1,24 +1,27 @@
 package stereotype_annotations.Model;
 
-import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author ghalipm on 9/2/2023
- * @project spring-review-IoC
+ * @author ghalipm on 9/10/2023
+ * @project spring-framework
  */
 @Component
-@AllArgsConstructor
+@Data
 public class DataStructure {
 
     @NonNull
     ExtraHours extraHours;
-    public DataStructure dataStructure(ExtraHours extraHours){
-        return new DataStructure(extraHours);
+
+    //@Autowired
+    public DataStructure(ExtraHours extraHours) {
+        this.extraHours = extraHours;
     }
 
     public void getTotalHours(){
-        System.out.println("Total hours: "+ 40+extraHours.getTotalHours());
+        System.out.println(" DS Total hours: "+(40+extraHours.getHours()));
     }
 }
