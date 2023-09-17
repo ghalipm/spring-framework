@@ -6,8 +6,78 @@
 </head>
 <body>
 Firstname:<h3 th:text="${employee.firstName}"></h3>
-Lastname:<h3 th:text="${employee.lastName}"></h3>
+ Lastname: <h3 th:text="${employee.lastName}"></h3>
 Salary:<h3 th:text="${employee.salary}"></h3>
+
+<table>
+    <tr>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Salary</td>
+    </tr>
+    <tr>
+        <td >Mike</td>
+        <td >Smith</td>
+        <td >150000$</td>
+    </tr>
+</table>
+
+<br>
+<label>Username</label>
+<!--<input type="text" name="username" th:value="${employee.firstName}">-->
+<input type="text" name="username">
+<br>
+<br>
+<label>Password</label>
+<input type="password" >
+
+<br>
+<br>
+<label>Enter your comment</label>
+<textarea  name="comments"></textarea>
+<br>
+<br>
+
+    <label>Gender:</label>
+    <br>
+    <input type="radio" name="gender" th:value="male">Male
+    <input type="radio" name="gender" th:value="female">Female
+    <input type="radio" name="gender" th:value="other">Other
+
+<br>
+<br>
+<label>Select your favorite courses</label>
+<input type="checkbox" name="course" th:value="java">Java
+<input type="checkbox" name="course" th:value="spring">Spring
+<input type="checkbox" name="course" th:value="ds">DS
+
+<br>
+<br>
+<!--Dropdown: select-->
+<label>Choose your favorite program</label>
+<select name="programm">
+    <option th:value="us_sdet">US_SDET</option>
+    <option th:value="eu_sdet">EU_SDET</option>
+    <option th:value="us_jd">US_JD</option>
+    <option th:value="eu_jd">EU_JD</option>
+</select>
+
+<!--Form: for actions-->
+<form action="#" method="get">
+    Firstname: <input type="text" name="first_name">
+    <br>
+    Lastname: <input type="text" name="lastname">
+    <br>
+    <input type="button" value="Submit">
+</form>
+<br>
+<!--div: division - block on the webpage-->
+<div style="background-color:lightblue">
+    <h3>Employee Info</h3>
+    <p>Firstname: </p>
+    <p>Lastname: </p>
+    <p>Salary: </p>
+</div>
 
 </body>
 </html>

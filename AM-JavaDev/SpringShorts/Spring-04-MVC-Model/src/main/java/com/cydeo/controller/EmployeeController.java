@@ -21,7 +21,7 @@ public class EmployeeController {
         return "employee-register";
     }
 
-    @RequestMapping("/add/{firstName}")  //http://localhost:8080/employee/add/Max
+    @RequestMapping("/add/{firstName}")  //localhost:8080/employee/add/Max
     public String getInfo2(@PathVariable String firstName, Model model){
         model.addAttribute("firstName", firstName);
         return "employee-register";
