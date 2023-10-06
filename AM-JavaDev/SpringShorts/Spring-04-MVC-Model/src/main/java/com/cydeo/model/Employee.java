@@ -13,5 +13,7 @@ import lombok.Data;
 public class Employee {
     private String firstName;
     private String lastName;
+    private String jobTitle;
     private int salary;
+
 }

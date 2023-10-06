@@ -72,12 +72,45 @@ Salary:<h3 th:text="${employee.salary}"></h3>
 </form>
 <br>
 <!--div: division - block on the webpage-->
-<div style="background-color:lightblue">
+<div style="background-color:lightgreen">
     <h3>Employee Info</h3>
-    <p>Firstname: </p>
-    <p>Lastname: </p>
-    <p>Salary: </p>
+    <table>
+        <tr>
+            <td>Firstname ||</td>
+            <td>Lastname || </td>
+            <td>Salary || </td>
+        </tr>
+        <tr th: each="employee:${employees}">
+            <td th:text="${employee.firstName}">Mike</td>
+            <td th:text="${employee.lastName}">Smith</td>
+            <td th:text="${employee.salary}">150000$</td>
+        </tr>
+    </table>
 </div>
 
+<!--Concatenation-->
+<h4 th:text="'Hello,  ' + ${employee.firstName}"></h4>
+<h4 th:text="${'Hi, '+employee.firstName}"></h4>
+
+<!--Links-->
+<a th:href="@{http://cydeo.com}">Cydeo Home</a>
+<br>
+
+<a th:href="@{/employees}"> Employee List</a>
+<br>
+<a th:href="@{/employees(name=${employee.firstName})}"> Add query</a>
+<!--/employees?name=Mike-->
+<br>
+
+<!--Conditional logic-->
+<div th:text="${employee.salary>80000?'Cool':'Ok'}">Salary</div>
+<br>
+
+<div >
+    <span th:if="${employee.firstName=='Zapaer'}"> Hi CEO! </span>
+    <span th:unless="${employee.firstName=='Zapaer'}"> Hi Employee! </span>
+</div>
+
+<div th:replace="/fragments/footer::footer-Cydeo"> </div>
 </body>
 </html>

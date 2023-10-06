@@ -1,5 +1,6 @@
 package com.cydeo.model;
 
+import com.cydeo.enums.AccountStatus;
 import com.cydeo.enums.AccountType;
 import lombok.Builder;
 import lombok.Data;
@@ -20,5 +21,6 @@ public class Account {
     private BigDecimal balance;
     private AccountType accountType;
     private Date creationDate;
-    private long userId;
+    private Long userId;
+    private AccountStatus accountStatus;
 }
