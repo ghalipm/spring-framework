@@ -1,5 +1,6 @@
 package com.cydeo.service.impl;
 
+import com.cydeo.enums.AccountStatus;
 import com.cydeo.enums.AccountType;
 import com.cydeo.model.Account;
 import com.cydeo.repository.AccountRepository;
@@ -11,8 +12,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import static com.cydeo.model.Account.*;
-
 /**
  * @author ghalipm on 9/9/2023
  * @project bank-simulation-app
@@ -20,23 +19,45 @@ import static com.cydeo.model.Account.*;
 @Component
 public class AccountServiceImpl implements AccountService {
 
-    AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
+
     @Override
     public Account createNewAccount(BigDecimal balance, Date createDate, AccountType accountType, Long userId) {
-        // create Account object
-        Account account=Account.builder().id(UUID.randomUUID()).userId(userId).balance(balance).accountType(accountType).creationDate(createDate).build();
-        // save the object into DB
-
-        //return the object
-        return null;
+        //we need to create Account object
+        Account account = Account.builder().id(UUID.randomUUID()).userId(userId)
+                .balance(balance).accountType(accountType).creationDate(createDate).accountStatus(AccountStatus.ACTIVE).build();
+        //save into the database(repository)
+        //return the object created
+        return accountRepository.save(account);
     }
 
     @Override
     public List<Account> listAllAccount() {
-        return null;
+        return accountRepository.findAll();
     }
+
+
+    @Override
+    public void deleteAccount(UUID id) {
+        //find the account belongs the id
+        //set status to deleted
+        accountRepository.findById(id).setAccountStatus(AccountStatus.DELETED);
+    }
+
+    @Override
+    public void activateAccount(UUID id) {
+        //find the account belongs the id
+        //set status to active
+        accountRepository.findById(id).setAccountStatus(AccountStatus.ACTIVE);
+    }
+
+    @Override
+    public Account retrieveById(UUID id) {
+        return accountRepository.findById(id);
+    }
+
 }

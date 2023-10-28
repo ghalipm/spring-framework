@@ -5,11 +5,12 @@ import com.cydeo.model.Account;
 import com.cydeo.service.AccountService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * @author ghalipm on 9/23/2023
@@ -20,6 +21,8 @@ import java.util.Date;
     // @RequestMapping("/")  is optional or not needed
     // unless there is a common end point for all methods
 public class AccountController {
+
+    private static final String REDIRECT_TO_INDEX = "redirect:/index";
 
     private final AccountService accountService;
 
@@ -49,23 +52,31 @@ public class AccountController {
     // trigger createNewAccount method from service, based on user input
     //redirect to the index page
     @PostMapping("/create")
-    //public String createAccount(@ModelAttribute("account") Account account) {
-    public String createAccount(Account account) {
+    public String createAccount(@Valid @ModelAttribute("account") Account account, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("accountTypes", AccountType.values());
+            return "account/create-account";
+        }
+
         System.out.println("account = " + account);
-        //accountService.createNewAccount(account.getBalance(), account.getCreationDate(), account.getAccountType(), account.getUserId());
         accountService.createNewAccount(account.getBalance(), new Date(), account.getAccountType(), account.getUserId());
-
-        return "redirect:/index";
+        return REDIRECT_TO_INDEX;
     }
 
-    @PostMapping("/delete")
-    public String deleteAccount(Account account) {
-        System.out.println("account = " + account);
-        accountService.deleteAccount(account);
-
-        return "redirect:/index";
+    //1. need to get the account id and provide it to the controller
+    //2. need to get the account for the id
+    // 3. update account status to inactive/deleted
+    @GetMapping("/delete/{id}")
+    public String deleteAccount(@PathVariable("id") UUID id) {
+        accountService.deleteAccount(id);
+        return REDIRECT_TO_INDEX;
     }
 
+    @GetMapping("/activate/{id}")
+    public String activateAccount(@PathVariable("id") UUID id) {
+        accountService.activateAccount(id);
+        return REDIRECT_TO_INDEX;
+    }
 
 
 
