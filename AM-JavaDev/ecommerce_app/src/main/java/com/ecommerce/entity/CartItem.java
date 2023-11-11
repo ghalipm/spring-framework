@@ -1,0 +1,27 @@
+package com.ecommerce.entity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.Entity;
+
+import javax.persistence.ManyToOne;
+
+/**
+ * @author ghalipm on 11/11/2023
+ * @project ecommerce_app
+ */
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class CartItem extends BaseEntity{
+
+    private Integer quantity;
+
+    @ManyToOne
+    private Product product;
+
+    @ManyToOne
+    private Cart cart;
+}
