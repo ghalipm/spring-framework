@@ -4,7 +4,8 @@ import com.ecommerce.enums.CartState;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Entity;
+//import org.hibernate.annotations.Entity; // this is not the correct import
+import javax.persistence.Entity;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

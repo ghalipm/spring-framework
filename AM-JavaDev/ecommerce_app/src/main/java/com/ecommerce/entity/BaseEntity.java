@@ -2,7 +2,8 @@ package com.ecommerce.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
+//import org.springframework.data.annotation.Id; // this is for MongoDB; we are using JPA
+import javax.persistence.Id;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

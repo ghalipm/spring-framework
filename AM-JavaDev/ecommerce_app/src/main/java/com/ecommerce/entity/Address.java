@@ -3,11 +3,9 @@ package com.ecommerce.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Entity;
-import org.springframework.data.annotation.Id;
+//import org.hibernate.annotations.Entity; // this is not the correct import
+import javax.persistence.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 
 /**

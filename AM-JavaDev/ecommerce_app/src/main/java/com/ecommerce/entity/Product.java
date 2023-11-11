@@ -3,7 +3,7 @@ package com.ecommerce.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Entity;
+import javax.persistence.Entity;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -26,6 +26,8 @@ public class Product extends BaseEntity{
     private Integer quantity;
     private Integer remainingQuantity;
 
+    // it is better to use @ManyToMany annotation in the entity that has lesser data: better performance
+    // For one Category, there can be a lot of Products, but for one Product, there will be lesser number of Categories
     @ManyToMany
     @JoinTable(name = "product_category_rel",
             joinColumns = @JoinColumn(name = "p_id"),

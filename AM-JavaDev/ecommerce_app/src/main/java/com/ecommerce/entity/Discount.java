@@ -4,7 +4,7 @@ import com.ecommerce.enums.DiscountType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Entity;
+import javax.persistence.Entity;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
