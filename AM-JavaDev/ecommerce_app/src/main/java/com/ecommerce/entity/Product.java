@@ -15,10 +15,10 @@ import java.util.List;
  * @author ghalipm on 11/11/2023
  * @project ecommerce_app
  */
+@Entity
 @NoArgsConstructor
 @Setter
 @Getter
-@Entity
 public class Product extends BaseEntity{
 
     private String name;
