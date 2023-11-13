@@ -13,7 +13,7 @@ import javax.persistence.MappedSuperclass;
  * @author ghalipm on 11/11/2023
  * @project ecommerce_app
  */
-@MappedSuperclass
+@MappedSuperclass // this is not an entity; it is a base class for other entities
 @Getter
 @Setter
 public abstract class BaseEntity {

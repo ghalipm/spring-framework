@@ -26,4 +26,9 @@ public class Address extends BaseEntity{
     //Many Address to One Customer
     @ManyToOne
     private Customer customer;
+
+    //a table with ID is an entity, but no ID, then the table is not an entity, but just a table and
+    // And for this table, one should use @JoinTable annotation; and @joinColumns and @inverseJoinColumns
+    // are used to specify the columns of the table that are used to join the two entities: product_category_rel
+    // but cart_item is an entity.
 }
