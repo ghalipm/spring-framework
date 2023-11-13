@@ -18,7 +18,6 @@ import javax.persistence.MappedSuperclass;
 @Setter
 public abstract class BaseEntity {
 
-    // auto generate the id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
